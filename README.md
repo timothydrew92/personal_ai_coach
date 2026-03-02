@@ -57,18 +57,50 @@ You need **Python 3.10 or newer** on your machine. If you’ve never installed P
 
 ---
 
-## Create and activate a virtual environment
+### 2. Download Cursor and create the project folder
+
+1. **Download and install Cursor**  
+   - Go to [cursor.com](https://cursor.com) and download Cursor for your OS (Mac or Windows).  
+   - Run the installer and open Cursor when it’s ready.
+
+2. **Create a folder named `personal_ai_coach`**  
+   - On your Mac or Windows PC, create a new folder called `personal_ai_coach` (e.g. on your Desktop or in Documents).  
+   - This folder will hold the project files.
+
+3. **Open the folder in Cursor**  
+   - In Cursor, go to **File → Open Folder** (Mac: `Cmd + O`; Windows: `Ctrl + K` then `Ctrl + O`).  
+   - Select the `personal_ai_coach` folder you created.  
+   - You’ll do the rest of the setup (venv, dependencies, running the app) inside this folder.
+
+---
+
+### 3. Generate the project files, then create and activate a virtual environment
+
+#### 3a. Add your first prompt to Cursor to create the file structure
+
+With the `personal_ai_coach` folder open in Cursor, open the AI chat (e.g. **Cursor Chat** or **Composer**) and paste the prompt below. Cursor will create the required files in this folder.
+
+```
+Create a minimal Streamlit project in this folder with these files: app.py, prompts.py, evaluation.py, requirements.txt, README.md, .gitignore.
+Constraints: keep the application logic in a single file (app.py). prompts.py should only store prompt templates and persona options. evaluation.py should be a simple script that runs 3 test cases against the prompt and prints a short report.
+Use OpenAI API via environment variable OPENAI_API_KEY. Do not hardcode any secrets.
+Make the README include Python install notes, venv setup, pip install, and streamlit run command.
+```
+
+When Cursor is done, you should see these files in your folder: **app.py**, **prompts.py**, **evaluation.py**, **requirements.txt**, **README.md**, and **.gitignore**. You can then continue with the venv and run steps below.
+
+#### 3b. Create and activate a virtual environment
 
 From the project root (`personal_ai_coach`):
 
-### macOS / Linux
+**macOS / Linux**
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### Windows (PowerShell)
+**Windows (PowerShell)**
 
 ```powershell
 python -m venv .venv
@@ -79,7 +111,7 @@ Once activated, your shell prompt should show `(.venv)` or similar.
 
 ---
 
-## Install dependencies
+### 4. Install dependencies
 
 With the virtual environment active, install the required packages:
 
@@ -89,7 +121,7 @@ pip install -r requirements.txt
 
 ---
 
-## Configure OpenAI API key
+### 5. Configure OpenAI API key
 
 The app and evaluation script both read your OpenAI API key from the `OPENAI_API_KEY` environment variable. **Do not** hardcode secrets in the code.
 
@@ -109,7 +141,7 @@ Replace `sk-your-key-here` with your actual key.
 
 ---
 
-## Run the Streamlit app
+### 6. Run the Streamlit app
 
 From the project root (with the virtual environment activated and `OPENAI_API_KEY` set):
 
@@ -117,11 +149,11 @@ From the project root (with the virtual environment activated and `OPENAI_API_KE
 streamlit run app.py
 ```
 
-This will open the Personal AI Coach interface in your browser. Choose a persona, enter your question or goal, and click **"Get coaching"**.
+This will open the Personal AI Coach interface in your browser. Enter your goal (and optional constraints), choose a coach style, and click **Generate Plan**.
 
 ---
 
-## Run the evaluation script
+### 7. Run the evaluation script
 
 To quickly test the prompt and personas without the UI, run:
 
