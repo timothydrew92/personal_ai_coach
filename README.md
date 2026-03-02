@@ -18,18 +18,42 @@ The project is intentionally small so it is easy to read, fork, and adapt.
 
 ### 1. Install Python
 
-- **Recommended**: Python 3.10 or newer.
-- On macOS, you can install via Homebrew:
+You need **Python 3.10 or newer** on your machine. If you’ve never installed Python, follow the steps below for your operating system.
 
-```bash
-brew install python
-```
+#### Option A: macOS
 
-Verify the version:
+1. **Check if Python is already installed**  
+   Open **Terminal** (Applications → Utilities → Terminal, or press `Cmd + Space`, type `Terminal`, press Enter). Run:
+   ```bash
+   python3 --version
+   ```
+   If you see something like `Python 3.10.x` or higher, you’re done with this step. If you see “command not found” or a version below 3.10, continue.
 
-```bash
-python3 --version
-```
+2. **Install Python** (choose one):
+   - **From python.org (recommended if you don’t use Homebrew):**  
+     - Go to [python.org/downloads](https://www.python.org/downloads/).  
+     - Download the latest **macOS** installer (e.g. “macOS 64-bit universal2 installer”).  
+     - Run the installer and follow the prompts (you can leave the default options checked).  
+     - When finished, close and reopen Terminal, then run `python3 --version` again to confirm.
+   - **Using Homebrew (if you already use it):**  
+     - In Terminal, run: `brew install python`  
+     - Then run: `python3 --version` to confirm.
+
+#### Option B: Windows
+
+1. **Check if Python is already installed**  
+   Open **PowerShell** (press `Win + X` and choose “Windows PowerShell”, or search for “PowerShell” in the Start menu). Run:
+   ```powershell
+   python --version
+   ```
+   If you see `Python 3.10.x` or higher, you’re done. If you see “not recognized” or a version below 3.10, continue.
+
+2. **Install Python from python.org**  
+   - Go to [python.org/downloads](https://www.python.org/downloads/).  
+   - Download the latest **Windows** installer (e.g. “Windows installer (64-bit)”).  
+   - Run the installer.  
+   - **Important:** On the first screen, check **“Add python.exe to PATH”**, then click “Install Now” (or “Customize installation” if you prefer, but still ensure “Add Python to PATH” is enabled).  
+   - When the installer finishes, close PowerShell, open a **new** PowerShell window, and run `python --version` to confirm.
 
 ---
 
