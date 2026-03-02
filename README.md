@@ -9,7 +9,7 @@ The project is intentionally small so it is easy to read, fork, and adapt.
 - **app.py**: Main Streamlit application and all application logic.
 - **prompts.py**: Prompt templates and persona definitions (no application logic).
 - **evaluation.py**: Simple script that runs three test cases against the prompts and prints a short report.
-- **requirements.txt**: Python dependencies.
+- **requirements.txt**: Python dependencies (streamlit, openai).
 - **.gitignore**: Ignore rules for Python / virtualenv / local files.
 
 ---
@@ -125,13 +125,28 @@ pip install -r requirements.txt
 
 The app and evaluation script both read your OpenAI API key from the `OPENAI_API_KEY` environment variable. **Do not** hardcode secrets in the code.
 
-### macOS / Linux
+This application connects to a live language model using an API key. You can create a key from:
+
+**OpenAI Platform:** [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+
+If you are using an enterprise environment, you may instead use:
+- Azure OpenAI
+- Google Vertex AI
+- Your organization's approved LLM provider
+
+A valid API key is required to generate real responses from the model.
+
+You do not need a ChatGPT subscription. This uses the developer API, not the ChatGPT web interface.
+
+**Set the key in your environment:**
+
+**macOS / Linux**
 
 ```bash
 export OPENAI_API_KEY="sk-your-key-here"
 ```
 
-### Windows (PowerShell)
+**Windows (PowerShell)**
 
 ```powershell
 $env:OPENAI_API_KEY="sk-your-key-here"
