@@ -1,3 +1,5 @@
+## FINAL VIBE CODING FILE AVAILABLE ON BRANCH - finalvibecodingfile
+
 ## Personal AI Coach – Minimal Streamlit App (Including Prompts & Instructions for use with Cursor IDE)
 
 A minimal Streamlit application that turns OpenAI's chat models into a small **personal AI coach**, with selectable personas and a simple evaluation script.
